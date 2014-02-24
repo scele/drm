@@ -33,6 +33,7 @@
 enum drm_tegra_class {
 	DRM_TEGRA_GR2D,
 	DRM_TEGRA_GR3D,
+	DRM_TEGRA_VIC,
 };
 
 struct drm_tegra_bo;

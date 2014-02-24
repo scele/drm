@@ -69,6 +69,10 @@ int drm_tegra_channel_open(struct drm_tegra_channel **channelp,
 		class = HOST1X_CLASS_GR3D;
 		break;
 
+	case DRM_TEGRA_VIC:
+		class = HOST1X_CLASS_VIC;
+		break;
+
 	default:
 		return -EINVAL;
 	}

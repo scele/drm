@@ -22,7 +22,8 @@ LDADD = \
 
 TESTS = \
 	openclose \
-	gr2d-fill
+	gr2d-fill \
+	vic-syncpt
 
 if HAVE_INSTALL_TESTS
 testdir = $(libexecdir)/libdrm/tests/tegra

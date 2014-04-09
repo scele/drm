@@ -282,6 +282,7 @@ int drmModeAddFB2(int fd, uint32_t width, uint32_t height,
 	struct drm_mode_fb_cmd2 f;
 	int ret;
 
+	VG_CLEAR(f);
 	f.width  = width;
 	f.height = height;
 	f.pixel_format = pixel_format;
@@ -309,6 +310,7 @@ drmModeFBPtr drmModeGetFB(int fd, uint32_t buf)
 	struct drm_mode_fb_cmd info;
 	drmModeFBPtr r;
 
+	VG_CLEAR(info);
 	info.fb_id = buf;
 
 	if (drmIoctl(fd, DRM_IOCTL_MODE_GETFB, &info))

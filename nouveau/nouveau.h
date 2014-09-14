@@ -225,6 +225,8 @@ void nouveau_pushbuf_reloc(struct nouveau_pushbuf *, struct nouveau_bo *,
 int  nouveau_pushbuf_validate(struct nouveau_pushbuf *);
 uint32_t nouveau_pushbuf_refd(struct nouveau_pushbuf *, struct nouveau_bo *);
 int  nouveau_pushbuf_kick(struct nouveau_pushbuf *, struct nouveau_object *channel);
+int  nouveau_pushbuf_kick_fence(struct nouveau_pushbuf *,
+				struct nouveau_object *channel, int *fence);
 struct nouveau_bufctx *
 nouveau_pushbuf_bufctx(struct nouveau_pushbuf *, struct nouveau_bufctx *);
 

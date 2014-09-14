@@ -171,6 +171,21 @@ struct drm_nouveau_gem_pushbuf {
 	uint64_t gart_available;
 };
 
+#define NOUVEAU_GEM_PUSHBUF_2_FENCE_WAIT                             0x00000001
+#define NOUVEAU_GEM_PUSHBUF_2_FENCE_EMIT                             0x00000002
+struct drm_nouveau_gem_pushbuf_2 {
+	uint32_t channel;
+	uint32_t flags;
+	uint32_t nr_push;
+	uint32_t nr_buffers;
+	int32_t  fence; /* in/out, depends on flags */
+	uint32_t pad;
+	uint64_t push; /* in raw hw format */
+	uint64_t buffers; /* ptr to drm_nouveau_gem_pushbuf_bo */
+	uint64_t vram_available;
+	uint64_t gart_available;
+};
+
 #define NOUVEAU_GEM_CPU_PREP_NOWAIT                                  0x00000001
 #define NOUVEAU_GEM_CPU_PREP_NOBLOCK                                 0x00000002
 #define NOUVEAU_GEM_CPU_PREP_WRITE                                   0x00000004
@@ -204,5 +219,6 @@ struct drm_nouveau_sarea {
 #define DRM_NOUVEAU_GEM_CPU_PREP       0x42
 #define DRM_NOUVEAU_GEM_CPU_FINI       0x43
 #define DRM_NOUVEAU_GEM_INFO           0x44
+#define DRM_NOUVEAU_GEM_PUSHBUF_2      0x45
 
 #endif /* __NOUVEAU_DRM_H__ */
